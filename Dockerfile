@@ -1,7 +1,7 @@
 # Inspired by https://github.com/bokysan/docker-postfix
 
 # Alpine 3.13 ships with Postfix 3.5.10
-FROM alpine:3.13
+FROM alpine:latest
 
 # Install dependencies
 RUN apk add --no-cache --update postfix cyrus-sasl ca-certificates bash && \
