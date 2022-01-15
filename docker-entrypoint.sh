@@ -67,7 +67,7 @@ postconf -e "relay_domains="
 
 # Relay configuration
 postconf -e relayhost=$POSTFIX_RELAY_HOST
-echo "$POSTFIX_RELAY_HOST $POSTFIX_RELAY_USER:$POSTFIX_RELAY_PASSWORD" >> /etc/postfix/sasl_passwd
+echo "$POSTFIX_RELAY_HOST $POSTFIX_RELAY_USER:$POSTFIX_RELAY_PASSWORD" > /etc/postfix/sasl_passwd
 postmap lmdb:/etc/postfix/sasl_passwd
 postconf -e "smtp_sasl_auth_enable=yes"
 postconf -e "smtp_sasl_password_maps=lmdb:/etc/postfix/sasl_passwd"
